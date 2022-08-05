@@ -9,9 +9,9 @@ public class isPalindrome1 {
         StringBuilder sb = new StringBuilder(normStr);
         String revStr = sb.reverse().toString();
         if (normStr.equalsIgnoreCase(revStr) == true) {
-            System.out.println("Your string IS a Palindrome");
+            System.out.println("True");
         } else {
-            System.out.println("Your string ISN`T a Palindrome");
+            System.out.println("False");
         }
     }
 }
