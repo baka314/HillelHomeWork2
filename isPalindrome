@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class isPalindrome1 {
+    public static void main(String[] args) {
+        String normStr;
+        Scanner sc = new Scanner(System.in);
+        sc = new Scanner(System.in);
+        System.out.print("Input string:  ");
+        normStr = sc.nextLine();
+        StringBuilder sb = new StringBuilder(normStr);
+        String revStr = sb.reverse().toString();
+        if (normStr.equalsIgnoreCase(revStr) == true) {
+            System.out.println("Your string IS a Palindrome");
+        } else {
+            System.out.println("Your string ISN`T a Palindrome");
+        }
+    }
+}
