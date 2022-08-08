@@ -1,4 +1,3 @@
-import java.util.regex.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,16 +15,10 @@ public class Main {
         }
     }
     public static boolean isPalindrome(String input) {
-        Pattern pattern = Pattern.compile("\\w+");
-        Matcher matcher = pattern.matcher(input);
-        StringBuilder builder = new StringBuilder();
-        while (matcher.find())
-            builder.append(matcher.group());
-        String result = builder.toString();
-        String reverseResult = builder.reverse().toString();
-        if(result.compareToIgnoreCase(reverseResult) == 0)
+        StringBuilder sb = new StringBuilder(input);
+        String revStr = sb.reverse().toString();
+        if (input.equalsIgnoreCase(revStr) == true) {
             return true;
-        else
+        } else {
             return false;
-    }
-}
+        }
