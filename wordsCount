@@ -15,6 +15,7 @@ public class Main {
         }
     }
     public static int wordsCount(String input) {
+        if (input.strip().equals("")) return 0;
         int counter = input.strip().split(" \s+").length;
         return counter;
     }
