@@ -7,7 +7,7 @@ public class Main {
         BufferedReader inputStream = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Please write a string of text ");
-            System.out.print("string: ");
+            System.out.print("\n string: ");
             String input = inputStream.readLine();
             System.out.print("Is Palindrome: ");
             System.out.print(isPalindrome(input));
