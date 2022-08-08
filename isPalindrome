@@ -1,17 +1,31 @@
-import java.util.Scanner;
+import java.util.regex.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 public class Main {
-    public static void isPalindrome(String[] args) {
-        String normStr;
-        Scanner sc = new Scanner(System.in);
-        sc = new Scanner(System.in);
-        System.out.print("Input string:  ");
-        normStr = sc.nextLine();
-        StringBuilder sb = new StringBuilder(normStr);
-        String revStr = sb.reverse().toString();
-        if (normStr.equalsIgnoreCase(revStr) == true) {
-            System.out.println("True");
-        } else {
-            System.out.println("False");
+    public static void main(String[] args) {
+        BufferedReader inputStream = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            System.out.print("Please write a string of text ");
+            System.out.print("string: ");
+            String input = inputStream.readLine();
+            System.out.print("Is Palindrome: ");
+            System.out.print(isPalindrome(input));
+        } catch (IOException exception) {
+            System.err.println("Please, write correct string");
         }
+    }
+    public static boolean isPalindrome(String input) {
+        Pattern pattern = Pattern.compile("\\w+");
+        Matcher matcher = pattern.matcher(input);
+        StringBuilder builder = new StringBuilder();
+        while (matcher.find())
+            builder.append(matcher.group());
+        String result = builder.toString();
+        String reverseResult = builder.reverse().toString();
+        if(result.compareToIgnoreCase(reverseResult) == 0)
+            return true;
+        else
+            return false;
     }
 }
